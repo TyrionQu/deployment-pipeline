@@ -11,22 +11,12 @@
 			</Component>
 		</DirectoryRef>
 
-		<!-- Shell Extension -->
-		<DirectoryRef Id="INSTALLDIR">
-			<Component Id="ShellExtension" Guid="*" Win64="$(var.Win64)">
-				<?if $(var.Platform) = "x64" ?>
-				<File Id="ShellExtensionX64DLL"
-				  Name="ShellExtensionX64.dll"
-				  SelfRegCost="1"
-				  Source="$(var.ShellExtBuildDir)\ShellExtensionX64.dll"
+		<DirectoryRef Id="UPDATERDIR">
+			<Component Id="Updater" Guid="*" Win64="$(var.Win64)">
+				<File Id="UpdaterEXE"
+				  Name="Updater.exe"
+				  Source="$(var.UpdaterBuildDir)\StageInstrument.exe"
 				  Vital="yes" />
-				<?else ?>
-				<File Id="ShellExtensionUDLL"
-				  Name="ShellExtensionU.dll"
-				  SelfRegCost="1"
-				  Source="$(var.ShellExtBuildDir)\ShellExtensionU.dll"
-				  Vital="yes" />
-				<?endif ?>
 			</Component>
 		</DirectoryRef>
 

@@ -14,46 +14,12 @@ The main installer script is in `Installer\WixInstaller` folder: `StageInstrumen
 First make sure you have all needed files compiled and available:
 
  * StageInstrument executables: `StageInstrument.exe`
- * Executable translations: `/Translations/StageInstrument/*.po`
+ * Executable updater: `/Updater/updater.exe`
  * Manual: `StageInstrument.chm`
- * ShellExtension: `ShellExtensionU.dll` and `ShellExtensionX64.dll`
  * Documents: `/Docs/Users/*`
- * Filters: `/Filters/*`
-
+ * Plugins: `/Plugins/*`
+                           
 These files are produced by compiling StageInstrument, documentation etc, but that's not subject of this document.
-
-In addition you will need Microsoft C- and MFC-runtime merge modules. Those files are not distributes with StageInstrument. By default we use VS2008 merge modules from the `%CommonProgramFiles%\Merge Modules` folder:
-
- * `Microsoft_VC90_CRT_x86.msm`
- * `Microsoft_VC90_MFC_x86.msm`
- * `Microsoft_VC90_CRT_x86_x64.msm`
- * `Microsoft_VC90_MFC_x86_x64.msm`
-
-### Folder structure
-
-Copy or move the files into the following layout:
-
- * `Manual/htmlhelp`
-   * `StageInstrument.chm`
- * `Release/`
-   * `ShellExtensionU.dll`
-   * `StageInstrument.exe`
- * `ShellExtensionX64/`
-   * `ShellExtensionX64.dll`
- * `Docs/`
-   * `Users`
-     * Copy the entire `Docs/Users` folder to here
- * `Filters/`
-   * `FileFilter.tmpl`
-   * `*.flt`
- * `Installer/`
-   * `WIX/`
-     * Copy the entire `Installer/WIX` folder to here
- * `Translations/`
-   * `Docs`
-     * `*.*`
-   * `StageInstrument`
-     * `*.po`
 
 ## Running WIX tools to create installer
 

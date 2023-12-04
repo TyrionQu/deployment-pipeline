@@ -6,9 +6,9 @@
     <ProductVersion>3.10</ProductVersion>
     <ProjectGuid>54daaf0c-010c-449a-a7d0-8281d365085a</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-	<OutputName Condition=" '$(ProductVersion)' != '' ">StageInstrument-$(ProductVersion)-$(Platform)-Setup</OutputName>
-	<OutputName Condition=" '$(ProductVersion)' == '' ">StageInstrument-$(Platform)-Setup</OutputName>
-	<OutputPath>..\..\Build\WiX\$(Configuration)\$(Platform)\</OutputPath>
+    <OutputName Condition=" '$(ProductVersion)' != '' ">StageInstrument-$(ProductVersion)-$(Platform)-Setup</OutputName>
+    <OutputName Condition=" '$(ProductVersion)' == '' ">StageInstrument-$(Platform)-Setup</OutputName>
+    <OutputPath>..\..\Build\WiX\$(Configuration)\$(Platform)\</OutputPath>
     <OutputType>Package</OutputType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -25,7 +25,11 @@
       <HintPath>C:\Program Files (x86)\WiX Toolset v3.11\bin\WixUIExtension.dll</HintPath>
       <Name>WixUIExtension</Name>
     </WixExtension>
-    <Compile Include="Fragments\core.wxs" />
+    <Compile Include="Fragments\Core.wxs" />
+    <Compile Include="Fragments\Docs.wxs" />
+    <Compile Include="Fragments\Features.wxs" />
+    <Compile Include="Fragments\Plugins.wxs" />
+    <Compile Include="Fragments\WixUI_StageInstrument.wxs" />
     <Compile Include="StageInstrument.wxs" />
     <Compile Include="Fragments\WixUI_AdditionalTasksDlg.wxs" />
   </ItemGroup>
@@ -33,7 +37,7 @@
     <Folder Include="Fragments\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="config.wxi" />
+    <Content Include="Config.wxi" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" Condition=" '$(WixTargetsPath)' != '' " />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets" Condition=" '$(WixTargetsPath)' == '' AND Exists('$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets') " />

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<?include ..\Config.wxi ?>
+	<Fragment>
+		<DirectoryRef Id="INSTALLDIR">
+			<Component Id="StageInstrument" Guid="*" Win64="$(var.Win64)">
+				<File Id="StageInstrumentEXE"
+				  Name="StageInstrument.exe"
+				  Source="$(var.MergeBuildDir)\StageInstrument.exe"
+				  Vital="yes" />
+			</Component>
+		</DirectoryRef>
+
+		<!-- Shell Extension -->
+		<DirectoryRef Id="INSTALLDIR">
+			<Component Id="ShellExtension" Guid="*" Win64="$(var.Win64)">
+				<?if $(var.Platform) = "x64" ?>
+				<File Id="ShellExtensionX64DLL"
+				  Name="ShellExtensionX64.dll"
+				  SelfRegCost="1"
+				  Source="$(var.ShellExtBuildDir)\ShellExtensionX64.dll"
+				  Vital="yes" />
+				<?else ?>
+				<File Id="ShellExtensionUDLL"
+				  Name="ShellExtensionU.dll"
+				  SelfRegCost="1"
+				  Source="$(var.ShellExtBuildDir)\ShellExtensionU.dll"
+				  Vital="yes" />
+				<?endif ?>
+			</Component>
+		</DirectoryRef>
+
+		<!-- Startmenu shortcuts -->
+		<DirectoryRef Id="StageInstrumentMenuFolder">
+			<Component Id="StartMenuShortcuts" Guid="$(var.StartMenuShortcutsGuid)" Win64="$(var.Win64)">
+				<Condition>TASK_STARTMENUSHORTCUTS</Condition>
+				<Shortcut Id="StageInstrumentStartMenuShortcut"
+				  Name="StageInstrument"
+				  Target="[INSTALLDIR]StageInstrument.exe"
+				  WorkingDirectory="INSTALLDIR" />
+				<Shortcut Id="ReadMeStartMenuShortcut"
+				  Name="Read Me"
+				  Target="[INSTALLDIR]Docs\ReadMe.txt"
+				  WorkingDirectory="INSTALLDIR" />
+				<Shortcut Id="HelpStartMenuShortcut"
+				  Name="StageInstrument Help"
+				  Target="[INSTALLDIR]Docs\StageInstrument.chm"
+				  WorkingDirectory="INSTALLDIR" />
+				<RemoveFolder Id="StageInstrumentMenuFolder" On="uninstall" />
+				<RegistryValue Root="HKCU" Key="Software\Thingamahoochie\StageInstrument" Name="Installed" Type="integer" Value="1" KeyPath="yes" />
+			</Component>
+		</DirectoryRef>
+
+		<!-- Desktop shortcut -->
+		<DirectoryRef Id="DesktopFolder">
+			<Component Id="DesktopShortcut" Guid="$(var.DesktopShortcutGuid)" Win64="$(var.Win64)">
+				<Condition>TASK_DESKTOPSHORTCUT</Condition>
+				<Shortcut Id="StageInstrumentDesktopShortcut"
+				  Name="StageInstrument"
+				  Target="[INSTALLDIR]StageInstrument.exe"
+				  WorkingDirectory="INSTALLDIR" />
+				<RegistryValue Root="HKCU" Key="Software\Thingamahoochie\StageInstrument" Name="Installed" Type="integer" Value="1" KeyPath="yes" />
+			</Component>
+		</DirectoryRef>
+	</Fragment>
+</Wix>

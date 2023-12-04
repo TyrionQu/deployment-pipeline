@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+	<?ifndef Platform ?>
+	<!-- if platform NOT defined -->
+	<?define Platform = "x86" ?>
+	<?endif ?>
+	<?define Manufacturer = "Tyrion Software" ?>
+	<?define ProductName = "StageInstrument" ?>
+	<?ifndef ProductVersion ?>
+	<!-- if product version NOT defined -->
+	<?define ProductVersion = "0.0.1" ?>
+	<?endif ?>
+
+	<?define PackageDescription = "StageInstrument Installer" ?>
+	<?define PackageKeywords = "Installer" ?>
+	<?define PackageComments = "StageInstrument" ?>
+
+	<?if $(var.Platform) = "x64" ?>
+	<!-- if "x64" platform -->
+	<?define Win64 = "yes" ?>
+	<?define PackagePlatform = "x64" ?>
+	<?define UpgradeGuid = "b6f3c55c-8221-4db7-8e2c-8d66f8a09dec" ?>
+
+	<?define ProgramFilesFolder = "ProgramFiles64Folder" ?>
+	<?define MergeBuildDir = "C:\Users\ziwwang\source\repos\StageInstrument\x64\Debug\" ?>
+	<?define ShellExtBuildDir = "..\..\Build\x64\ShellExtensionUnicode release mindependency" ?>
+
+	<?define StartMenuShortcutsGuid = "f941e517-b1b1-4e89-adab-2cdbb79a5109" ?>
+	<?define DesktopShortcutGuid = "b3b4d6ab-c112-47cc-a380-333b13e689e4" ?>
+
+	<?else ?>
+	<!-- if "x86" platform -->
+	<?define Win64 = "no" ?>
+	<?define PackagePlatform = "x86" ?>
+	<?define UpgradeGuid = "c46aba20-971a-421e-b18d-260d7b85d84b" ?>
+
+	<?define ProgramFilesFolder = "ProgramFilesFolder" ?>
+	<?define MergeBuildDir = "C:\Users\ziwwang\source\repos\StageInstrument\Debug\" ?>
+	<?define ShellExtBuildDir = "..\..\Build\ShellExtensionUnicode release mindependency" ?>
+
+	<?define StartMenuShortcutsGuid = "77205d9a-4fa2-4e08-af48-171f087a8630" ?>
+	<?define DesktopShortcutGuid = "1fd785d1-7c34-4ffb-8886-6d13c6669d03" ?>
+
+	<?endif ?>
+</Include>

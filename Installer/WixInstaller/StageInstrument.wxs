@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<?include Config.wxi ?>
+	<Product Id="*" Name="$(var.ProductName)" Language="1033" Version="$(var.ProductVersion)" Manufacturer="$(var.Manufacturer)" UpgradeCode="$(var.UpgradeGuid)">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<Media Id="1" Cabinet="StageInstrument.cab" EmbedCab="yes" />
+		
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="$(var.ProgramFilesFolder)">
+				<Directory Id="INSTALLDIR" Name="$(var.ProductName)">
+					<Directory Id="DOCSDIR" Name="Docs" />
+					<Directory Id="FILTERSDIR" Name="Filters" />
+					<Directory Id="LANGDIR" Name="Languages" />
+					<Directory Id="PLUGINSDIR" Name="MergePlugins" />
+				</Directory>
+			</Directory>
+			<Directory Id="ProgramMenuFolder">
+				<Directory Id="StageInstrumentMenuFolder" Name="$(var.ProductName)" />
+			</Directory>
+			<Directory Id="DesktopFolder" />
+		</Directory>
+		
+		<Property Id="TASK_STARTMENUSHORTCUTS">1</Property>
+		<Property Id="TASK_DESKTOPSHORTCUT">1</Property>
+		
+		<FeatureRef Id="StageInstrument" />
+
+		<UI />
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="WixInstaller" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+			<!-- </Component> -->
+		</ComponentGroup>
+	</Fragment>
+</Wix>

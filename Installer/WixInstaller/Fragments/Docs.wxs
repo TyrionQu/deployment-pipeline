@@ -16,20 +16,12 @@
 				  Source="..\..\Docs\Users\ReleaseNotes.html"
 				  Vital="no" />
 			</Component>
-
-			<Component Id="ChangeLog" Guid="*" Win64="$(var.Win64)">
-				<File Id="ChangeLogTXT"
-				  Name="ChangeLog.txt"
-				  Source="..\..\Docs\Users\ChangeLog.txt"
-				  Vital="no" />
-			</Component>
-
-			<Component Id="StageInstrumentHelp" Guid="*" Win64="$(var.Win64)">
-				<File Id="StageInstrumentCHM"
-				  Name="StageInstrument.chm"
-				  Source="..\..\Build\Manual\htmlhelp\StageInstrument.chm"
-				  Vital="no" />
-			</Component>
 		</DirectoryRef>
+
+		<ComponentGroup Id="DocsGroup">
+			<ComponentRef Id="ReadMe" />
+			<ComponentRef Id="ReleaseNotes" />
+		</ComponentGroup>
+		
 	</Fragment>
 </Wix>

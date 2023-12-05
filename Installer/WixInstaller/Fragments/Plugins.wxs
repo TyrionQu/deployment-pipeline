@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<?include ..\Config.wxi ?>
 	<Fragment>
 		<DirectoryRef Id="PLUGINSDIR">
-			<Component Id="ReadMe" Guid="*" Win64="$(var.Win64)">
-				<File Id="ReadMeTXT"
+			<Component Id="opencv_dll" Guid="*" Win64="$(var.Win64)">
+				<File Id="opencv_dll"
 				  Name="ReadMe.txt"
 				  Source="..\..\Docs\Users\ReadMe.txt"
 				  Vital="no" />
 			</Component>
 		</DirectoryRef>
+
+		<ComponentGroup Id="PluginsGroup">
+			<ComponentRef Id="opencv_dll" />
+		</ComponentGroup>
 	</Fragment>
 </Wix>

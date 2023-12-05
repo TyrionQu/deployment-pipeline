@@ -15,7 +15,7 @@
 			<Component Id="Updater" Guid="*" Win64="$(var.Win64)">
 				<File Id="UpdaterEXE"
 				  Name="Updater.exe"
-				  Source="$(var.UpdaterBuildDir)\StageInstrument.exe"
+				  Source="$(var.MergeBuildDir)\StageInstrument.exe"
 				  Vital="yes" />
 			</Component>
 		</DirectoryRef>

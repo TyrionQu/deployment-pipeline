@@ -18,10 +18,10 @@
 			<ComponentRef Id="StartMenuShortcuts" />
 			<ComponentRef Id="DesktopShortcut" />
 			<Feature Id="Documentation" Absent="disallow" AllowAdvertise="no" Display="hidden" Level="1" Title="Documentation">
-				<ComponentRef Id="ReadMe" />
-				<ComponentRef Id="ReleaseNotes" />
-				<ComponentRef Id="ChangeLog" />
-				<ComponentRef Id="StageInstrumentHelp" />
+				<ComponentGroupRef Id="DocsGroup" />
+			</Feature>
+			<Feature Id="Plugins" Absent="disallow" AllowAdvertise="no" Display="hidden" Level="1" Title="Plugins">
+				<ComponentGroupRef Id="PluginsGroup" />
 			</Feature>
 		</Feature>
 	</Fragment>

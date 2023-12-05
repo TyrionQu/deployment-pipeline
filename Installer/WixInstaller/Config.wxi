@@ -2,7 +2,7 @@
 <Include>
 	<?ifndef Platform ?>
 	<!-- if platform NOT defined -->
-	<?define Platform = "x86" ?>
+	<?define Platform = "x64" ?>
 	<?endif ?>
 	<?define Manufacturer = "Tyrion Software" ?>
 	<?define ProductName = "StageInstrument" ?>

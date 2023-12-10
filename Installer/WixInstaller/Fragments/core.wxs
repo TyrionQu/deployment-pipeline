@@ -14,7 +14,7 @@
 				<CreateFolder />
 				<Environment Id="OpencvEnvironmentVariable"
 							 Action="set"
-							 Name="OPENCV_BIN_PATH"
+							 Name="PATH"
 							 Part="last"
 							 Permanent="no"
 							 System="yes"

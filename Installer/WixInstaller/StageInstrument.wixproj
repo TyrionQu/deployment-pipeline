@@ -2,8 +2,8 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" InitialTargets="EnsureWixToolsetInstalled" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <DefineSolutionProperties>false</DefineSolutionProperties>
-    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
     <ProductVersion>3.10</ProductVersion>
     <ProjectGuid>54daaf0c-010c-449a-a7d0-8281d365085a</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
@@ -11,6 +11,7 @@
     <OutputName Condition=" '$(ProductVersion)' == '' ">StageInstrument-$(Platform)-Setup</OutputName>
     <OutputPath>..\..\Build\WiX\$(Configuration)\$(Platform)\</OutputPath>
     <OutputType>Package</OutputType>
+	<IntermediateOutputPath>..\..\BuildTmp\WiX\$(Configuration)\$(Platform)\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DefineConstants>Debug</DefineConstants>
@@ -25,8 +26,13 @@
     </WixExtension>
     <Compile Include="Fragments\Core.wxs" />
     <Compile Include="Fragments\Docs.wxs" />
-    <Compile Include="Fragments\Features.wxs" />
-    <Compile Include="Fragments\Plugins.wxs" />
+	<!--
+    <Compile Include="Fragments\OpencvDebug.wxs" Condition=" '$(Configuration)' == 'Debug' " />
+	<Compile Include="Fragments\Opencv.wxs" Condition=" '$(Configuration)' == 'Release' " />
+	-->
+	<Compile Include="Fragments\Opencv.wxs"/>
+	<Compile Include="Fragments\Features.wxs" />
+	<Compile Include="Fragments\Updater.wxs" />
     <Compile Include="Fragments\WixUI_StageInstrument.wxs" />
     <Compile Include="StageInstrument.wxs" />
     <Compile Include="Fragments\WixUI_AdditionalTasksDlg.wxs" />

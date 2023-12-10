@@ -10,9 +10,9 @@
 		<Directory Id="TARGETDIR" Name="SourceDir">
 			<Directory Id="$(var.ProgramFilesFolder)">
 				<Directory Id="INSTALLDIR" Name="$(var.ProductName)">
-					<Directory Id="UPDATERDIR" Name="Updater" />
-					<Directory Id="PLUGINSDIR" Name="Plugins" />
-					<Directory Id="DOCSDIR" Name="Docs" />
+					<Directory Id="OPENCVDIR" Name="opencv" />
+					<Directory Id="UPDATERDIR" Name="updater" />
+					<Directory Id="DOCSDIR" Name="docs" />
 				</Directory>
 			</Directory>
 			<Directory Id="ProgramMenuFolder">

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<?include ..\Config.wxi ?>
+	<Fragment>
+		<DirectoryRef Id="UPDATERDIR">
+			<Component Id="UpdaterExe" Guid="*" Win64="$(var.Win64)">
+				<File Id="GupExe"
+				  Name="GUP.exe"
+				  Source="$(var.UpdaterBuildDir)\GUP.exe"
+				  Vital="no" />
+			</Component>
+			<Component Id="UpdaterCurl" Guid="*" Win64="$(var.Win64)">
+				<File Id="GupCurllDll"
+				  Name="libcurl.dll"
+				  Source="$(var.UpdaterBuildDir)\libcurl.dll"
+				  Vital="no" />
+			</Component>
+			<Component Id="UpdaterReadMe" Guid="*" Win64="$(var.Win64)">
+				<File Id="GupReadMe"
+				  Name="README.md"
+				  Source="$(var.UpdaterBuildDir)\README.md"
+				  Vital="no" />
+			</Component>
+			<Component Id="UpdaterLicense" Guid="*" Win64="$(var.Win64)">
+				<File Id="GupLicense"
+				  Name="LICENSE"
+				  Source="$(var.UpdaterBuildDir)\LICENSE"
+				  Vital="no" />
+			</Component>
+			<Component Id="UpdaterXml" Guid="*" Win64="$(var.Win64)">
+				<File Id="gupXml"
+				  Name="gup.xml"
+				  Source="$(var.UpdaterBuildDir)\gup.xml"
+				  Vital="no" />
+			</Component>
+
+
+		</DirectoryRef>
+
+		<ComponentGroup Id="UpdaterGroup">
+			<ComponentRef Id="UpdaterExe" />
+			<ComponentRef Id="UpdaterCurl" />
+			<ComponentRef Id="UpdaterReadMe" />
+			<ComponentRef Id="UpdaterLicense" />
+			<ComponentRef Id="UpdaterXml" />
+		</ComponentGroup>
+		
+	</Fragment>
+</Wix>

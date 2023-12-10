@@ -14,14 +14,17 @@
 		  Level="1"
 		  Title="StageInstrument">
 			<ComponentRef Id="StageInstrument" />
-			<ComponentRef Id="Updater" />
+			<ComponentRef Id="SetOpencvEnvironmentVariable" />
 			<ComponentRef Id="StartMenuShortcuts" />
 			<ComponentRef Id="DesktopShortcut" />
 			<Feature Id="Documentation" Absent="disallow" AllowAdvertise="no" Display="hidden" Level="1" Title="Documentation">
 				<ComponentGroupRef Id="DocsGroup" />
 			</Feature>
-			<Feature Id="Plugins" Absent="disallow" AllowAdvertise="no" Display="hidden" Level="1" Title="Plugins">
-				<ComponentGroupRef Id="PluginsGroup" />
+			<Feature Id="Opencv" Absent="disallow" AllowAdvertise="no" Display="hidden" Level="1" Title="Opencv">
+				<ComponentGroupRef Id="OpenCVGroup" />
+			</Feature>
+			<Feature Id="Updater" Absent="disallow" AllowAdvertise="no" Display="hidden" Level="1" Title="Updater">
+				<ComponentGroupRef Id="UpdaterGroup" />
 			</Feature>
 		</Feature>
 	</Fragment>

@@ -4,7 +4,11 @@
 	<!-- if platform NOT defined -->
 	<?define Platform = "x64" ?>
 	<?endif ?>
-	<?define Manufacturer = "Tyrion Software" ?>
+	<?ifndef Configuration ?>
+	<!-- if Configuration NOT defined -->
+	<?define Configuration = "Debug" ?>
+	<?endif ?>
+	<?define Manufacturer = "Jingdian Optoelectronic Technology Corporation" ?>
 	<?define ProductName = "StageInstrument" ?>
 	<?ifndef ProductVersion ?>
 	<!-- if product version NOT defined -->
@@ -14,32 +18,37 @@
 	<?define PackageDescription = "StageInstrument Installer" ?>
 	<?define PackageKeywords = "Installer" ?>
 	<?define PackageComments = "StageInstrument" ?>
+	<?define DependenciesDir = "..\..\dependencies\" ?>
 
 	<?if $(var.Platform) = "x64" ?>
 	<!-- if "x64" platform -->
 	<?define Win64 = "yes" ?>
 	<?define PackagePlatform = "x64" ?>
-	<?define UpgradeGuid = "b6f3c55c-8221-4db7-8e2c-8d66f8a09dec" ?>
+	<?define UpgradeGuid = "d6d32fd5-5a71-402a-9938-a75e4147d083" ?>
 
 	<?define ProgramFilesFolder = "ProgramFiles64Folder" ?>
-	<?define MergeBuildDir = "..\..\..\StageInstrument\x64\Debug\" ?>
-	<?define UpdaterBuildDir = "..\..\..\dependencies\wingup\x64\Debug\" ?>
+	<?define MergeBuildDir = "..\..\StageInstrument\x64\$(var.Configuration)\" ?>
+	<?define UpdaterBuildDir = "..\..\dependencies\wingup\bin64\" ?>
+	<?define OpencvBuildDir = "..\..\dependencies\opencv\build\bin\Release\" ?>
 
-	<?define StartMenuShortcutsGuid = "f941e517-b1b1-4e89-adab-2cdbb79a5109" ?>
-	<?define DesktopShortcutGuid = "b3b4d6ab-c112-47cc-a380-333b13e689e4" ?>
+	<?define StartMenuShortcutsGuid = "d2895226-4499-4db4-acdc-79ad3df3aad6" ?>
+	<?define DesktopShortcutGuid = "6cca4256-0db4-4fa2-8559-769742604334" ?>
+	<?define OpencvSetEnvGuid = "b5844209-7e90-407a-9bf2-0e78e3c63ed8" ?>
 
 	<?else ?>
 	<!-- if "x86" platform -->
 	<?define Win64 = "no" ?>
 	<?define PackagePlatform = "x86" ?>
-	<?define UpgradeGuid = "c46aba20-971a-421e-b18d-260d7b85d84b" ?>
+	<?define UpgradeGuid = "689ee3f7-297d-40f6-8394-add7866fef58" ?>
 
 	<?define ProgramFilesFolder = "ProgramFilesFolder" ?>
-	<?define MergeBuildDir = "..\..\..\StageInstrumen\StageInstrument\Debug\" ?>
-	<?define UpdaterBuildDir = "..\..\..\dependencies\wingup\Debug\" ?>
+	<?define MergeBuildDir = "..\..\StageInstrumen\StageInstrument\$(var.Configuration)\" ?>
+	<?define UpdaterBuildDir = "..\..\dependencies\wingup\bin\" ?>
+	<?define OpencvBuildDir = "..\..\dependencies\opencv\build\bin\Release\" ?>
 
-	<?define StartMenuShortcutsGuid = "77205d9a-4fa2-4e08-af48-171f087a8630" ?>
-	<?define DesktopShortcutGuid = "1fd785d1-7c34-4ffb-8886-6d13c6669d03" ?>
+	<?define StartMenuShortcutsGuid = "c7bd9f73-64d3-4289-8cf7-73ab3c673ddb" ?>
+	<?define DesktopShortcutGuid = "4c353e18-097e-4d7f-9cb3-b542bdefc2b0" ?>
+	<?define OpencvSetEnvGuid = "dd3f764e-c8a2-42e1-a930-13b57e1583c0" ?>
 
 	<?endif ?>
 </Include>

@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<?include ..\Config.wxi ?>
+    <Fragment>
+        <DirectoryRef Id="OPENCVDIR">
+            <Component Id="cmp6A427B8A9D6E0B63A264DB765BB26B98" Guid="*" Win64="$(var.Win64)">
+                <File Id="filE54ADAA8ACA6916AB3AD91CFCD06853B" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_annotationd.exe" />
+            </Component>
+            <Component Id="cmpDE90264094B929F0047056321FFABB5B" Guid="*" Win64="$(var.Win64)">
+                <File Id="filE46151F17E4087D030859E08A9D368F6" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_annotationd.pdb" />
+            </Component>
+            <Component Id="cmp03E7795668B0F245AD7D527196C974FC" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil745A7338083B83B85CF4268968DB7890" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_calib3d481d.dll" />
+            </Component>
+            <Component Id="cmp78F025A3814BD6734C31B5B41BBC8C7E" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil05BCE718D0F6BEF95753EB31D6985A24" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_calib3d481d.pdb" />
+            </Component>
+            <Component Id="cmp7D534D56C5181F558D9DEE156BE27446" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil0CD47DBC122EABB3AE254EFF5B3C462C" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_core481d.dll" />
+            </Component>
+            <Component Id="cmpBF6380C47D193AE62F2F8B41052233F6" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil826B790C2F80DCD89193827A5488728F" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_core481d.pdb" />
+            </Component>
+            <Component Id="cmp2EB742814C25536C6197979A6169EB30" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil0DFCBCA7B978ABF203D73EF71BBC70F2" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_dnn481d.dll" />
+            </Component>
+            <Component Id="cmp396091AC6D89E8AA9E1667CB2ED49593" Guid="*" Win64="$(var.Win64)">
+                <File Id="filF2E5EB58AF24BFAB7725DAEE40F41A58" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_dnn481d.pdb" />
+            </Component>
+            <Component Id="cmp52A5FAD6DB1047B15223F94D222A556C" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil01DE454BE3AE6CD5AE6A737B4799F0FE" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_features2d481d.dll" />
+            </Component>
+            <Component Id="cmp996F214A8908BA9D87A63C0A5990EE6E" Guid="*" Win64="$(var.Win64)">
+                <File Id="filD01051E6DD91700EEAD14D11B4E62D00" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_features2d481d.pdb" />
+            </Component>
+            <Component Id="cmp52C230D5152344F1CFEDBD34A1AEF662" Guid="*" Win64="$(var.Win64)">
+                <File Id="filF8610FA3A56E657821AF5618BD94A904" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_flann481d.dll" />
+            </Component>
+            <Component Id="cmpA451B915C18ED8A830611F5CC0E27460" Guid="*" Win64="$(var.Win64)">
+                <File Id="filCE1B75BA487C63F0042D0AF2E5EEA509" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_flann481d.pdb" />
+            </Component>
+            <Component Id="cmp52647729254A7740BAC81EB9169EC432" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil0C7E3C399F46B142A18474A15FC7991F" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_gapi481d.dll" />
+            </Component>
+            <Component Id="cmpADC717C906F40B08BF472D45FBBFF1C5" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil60BBFE786D864D5262D91E0D63AADFE3" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_gapi481d.pdb" />
+            </Component>
+            <Component Id="cmp0C385A1F3AD7E1B5A1E46A76D43B4A83" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil9AF57CDEBC796CDA9D1056161731A3FA" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_highgui481d.dll" />
+            </Component>
+            <Component Id="cmpDC99F36758836670469194C45BDB50B0" Guid="*" Win64="$(var.Win64)">
+                <File Id="filBB6B3758371C17739BA0573D9F11C995" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_highgui481d.pdb" />
+            </Component>
+            <Component Id="cmp8B5D7C114002B7C7E6EFFB2635BBAFD7" Guid="*" Win64="$(var.Win64)">
+                <File Id="filACE9DF98D584B6A8B99DCA0960EEF2D4" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_imgcodecs481d.dll" />
+            </Component>
+            <Component Id="cmp37E434D444DFC7700EB61E34EFC6E9D8" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil62BB21769CE34C4A9903CEB84CF48773" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_imgcodecs481d.pdb" />
+            </Component>
+            <Component Id="cmpDFD2FB28D8810DA363899DEBBE64DDC8" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil4829EC400359D3F19F19B693CEE3196E" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_imgproc481d.dll" />
+            </Component>
+            <Component Id="cmpF27FA1147F59D6D4DC8F9AAB0EDBE0CA" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil5AF14DD58252FE1CE598AAB4ECC15156" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_imgproc481d.pdb" />
+            </Component>
+            <Component Id="cmpCC3CFB6B365F4F6417B367A33382D055" Guid="*" Win64="$(var.Win64)">
+                <File Id="filFF38101DA9A5C83F4D257B92819595A5" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_interactive-calibrationd.exe" />
+            </Component>
+            <Component Id="cmp2FA26BC52EB6D941CCFF72C253FBBD26" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil2B149A4D51931BA3D1B3E21B71B87114" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_interactive-calibrationd.pdb" />
+            </Component>
+            <Component Id="cmpAEF1E16A7452FAB0B9BCD9A849F7D586" Guid="*" Win64="$(var.Win64)">
+                <File Id="filFE93BDBDA338C3E7D2C70E24CE10B37F" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_ml481d.dll" />
+            </Component>
+            <Component Id="cmp6282E8CE11FC637BAA56A9122F9019E9" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil6679958B14DDC66C3A9B31EABC2BE317" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_ml481d.pdb" />
+            </Component>
+            <Component Id="cmpC2A631B782CCED2F1D3584B313A69BD9" Guid="*" Win64="$(var.Win64)">
+                <File Id="filCBF6E1BFACB9FD1BADF436A1C664FB92" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_model_diagnosticsd.exe" />
+            </Component>
+            <Component Id="cmpB5823637A70470AA6B97263DCDF57C41" Guid="*" Win64="$(var.Win64)">
+                <File Id="filA70475E058A707D293DA53F802E83660" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_model_diagnosticsd.pdb" />
+            </Component>
+            <Component Id="cmpEFA54526B75CAD49495A90B4BB356BF8" Guid="*" Win64="$(var.Win64)">
+                <File Id="filF68A828DA48ED95AA6D372E02D12B8D5" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_objdetect481d.dll" />
+            </Component>
+            <Component Id="cmp569546AD67F063D6DE0206ACA8F0BC8F" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil54220DCB58BD4C26170DD369B93F9932" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_objdetect481d.pdb" />
+            </Component>
+            <Component Id="cmp34C41E482D6B932D4E06156CD43AAB96" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil4439051503A3B6770466D7C8A86BE890" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_photo481d.dll" />
+            </Component>
+            <Component Id="cmp044E92EF64244B73EE5E10AC43C2BD5B" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil6A693E0F2606B5A4D32D585A57B6C381" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_photo481d.pdb" />
+            </Component>
+            <Component Id="cmp8BEFE6B5A7518244904FEC6961912959" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil3CDBFB549F5FF9D0D98B11D6B06EBEF5" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_stitching481d.dll" />
+            </Component>
+            <Component Id="cmpBFBDDD3FC04C19E9DD79DC176386CFAD" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil1E3A90439360F8CF7012FA49D5ABC205" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_stitching481d.pdb" />
+            </Component>
+            <Component Id="cmpA49F1AE19250EFE2E8B3B5E80556227F" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil3EE7C9353994C16134CEE041EE311F10" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_versiond.exe" />
+            </Component>
+            <Component Id="cmp6535C82296C4A5C89E0671E7AACAF7B6" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil1DC6B023E10398206B163AF88A4EA337" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_versiond.pdb" />
+            </Component>
+            <Component Id="cmp5E0106B013889EA9C6552E6F4830A4A9" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil0C7B00DDAD881D1732536B2267880D20" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_version_win32d.exe" />
+            </Component>
+            <Component Id="cmp3DB924FAF150C81E8188B88B02EBAB6A" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil9C077BE214A34C69B1BB0324F576644B" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_version_win32d.pdb" />
+            </Component>
+            <Component Id="cmp3B05D846CAE9AF7F3FCC8CC52FA78E80" Guid="*" Win64="$(var.Win64)">
+                <File Id="filC42E1D2D8C5AB413A61625FDA29FAF6D" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_video481d.dll" />
+            </Component>
+            <Component Id="cmp0E59FD61BD8BAEB9E65B225C6E5561FA" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil95D52D671AB52B87711ADC8BDE3C90ED" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_video481d.pdb" />
+            </Component>
+            <Component Id="cmpC6F692AFC5C3316767F7762331247678" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil3BA5FFB06586E3BBABC212B00DBBBAE2" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_videoio481d.dll" />
+            </Component>
+            <Component Id="cmpD6C819F6AFBC577962CCB9ADD0AC9194" Guid="*" Win64="$(var.Win64)">
+                <File Id="filF42F9B3D3E1725ABA0555C4FA99206B6" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_videoio481d.pdb" />
+            </Component>
+            <Component Id="cmpCAA590F91FB21C27F2335F451F8FB09B" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil130A92FF7F168E340CC009F6C7DEE7C4" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_videoio_ffmpeg481_64.dll" />
+            </Component>
+            <Component Id="cmpC86D8C9DDFE044AEE0D98479B6D1E848" Guid="*" Win64="$(var.Win64)">
+                <File Id="fil9D2931A7D097A878E75CB7755817A67A" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_visualisationd.exe" />
+            </Component>
+            <Component Id="cmp0122CE1519BEC26C35F1D0E608B8A980" Guid="*" Win64="$(var.Win64)">
+                <File Id="filE18FB232CD00EDC253FA57A7E87434A4" KeyPath="yes" Source="$(var.OpencvBuildDir)\opencv_visualisationd.pdb" />
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="OpenCVGroup">
+            <ComponentRef Id="cmp6A427B8A9D6E0B63A264DB765BB26B98" />
+            <ComponentRef Id="cmpDE90264094B929F0047056321FFABB5B" />
+            <ComponentRef Id="cmp03E7795668B0F245AD7D527196C974FC" />
+            <ComponentRef Id="cmp78F025A3814BD6734C31B5B41BBC8C7E" />
+            <ComponentRef Id="cmp7D534D56C5181F558D9DEE156BE27446" />
+            <ComponentRef Id="cmpBF6380C47D193AE62F2F8B41052233F6" />
+            <ComponentRef Id="cmp2EB742814C25536C6197979A6169EB30" />
+            <ComponentRef Id="cmp396091AC6D89E8AA9E1667CB2ED49593" />
+            <ComponentRef Id="cmp52A5FAD6DB1047B15223F94D222A556C" />
+            <ComponentRef Id="cmp996F214A8908BA9D87A63C0A5990EE6E" />
+            <ComponentRef Id="cmp52C230D5152344F1CFEDBD34A1AEF662" />
+            <ComponentRef Id="cmpA451B915C18ED8A830611F5CC0E27460" />
+            <ComponentRef Id="cmp52647729254A7740BAC81EB9169EC432" />
+            <ComponentRef Id="cmpADC717C906F40B08BF472D45FBBFF1C5" />
+            <ComponentRef Id="cmp0C385A1F3AD7E1B5A1E46A76D43B4A83" />
+            <ComponentRef Id="cmpDC99F36758836670469194C45BDB50B0" />
+            <ComponentRef Id="cmp8B5D7C114002B7C7E6EFFB2635BBAFD7" />
+            <ComponentRef Id="cmp37E434D444DFC7700EB61E34EFC6E9D8" />
+            <ComponentRef Id="cmpDFD2FB28D8810DA363899DEBBE64DDC8" />
+            <ComponentRef Id="cmpF27FA1147F59D6D4DC8F9AAB0EDBE0CA" />
+            <ComponentRef Id="cmpCC3CFB6B365F4F6417B367A33382D055" />
+            <ComponentRef Id="cmp2FA26BC52EB6D941CCFF72C253FBBD26" />
+            <ComponentRef Id="cmpAEF1E16A7452FAB0B9BCD9A849F7D586" />
+            <ComponentRef Id="cmp6282E8CE11FC637BAA56A9122F9019E9" />
+            <ComponentRef Id="cmpC2A631B782CCED2F1D3584B313A69BD9" />
+            <ComponentRef Id="cmpB5823637A70470AA6B97263DCDF57C41" />
+            <ComponentRef Id="cmpEFA54526B75CAD49495A90B4BB356BF8" />
+            <ComponentRef Id="cmp569546AD67F063D6DE0206ACA8F0BC8F" />
+            <ComponentRef Id="cmp34C41E482D6B932D4E06156CD43AAB96" />
+            <ComponentRef Id="cmp044E92EF64244B73EE5E10AC43C2BD5B" />
+            <ComponentRef Id="cmp8BEFE6B5A7518244904FEC6961912959" />
+            <ComponentRef Id="cmpBFBDDD3FC04C19E9DD79DC176386CFAD" />
+            <ComponentRef Id="cmpA49F1AE19250EFE2E8B3B5E80556227F" />
+            <ComponentRef Id="cmp6535C82296C4A5C89E0671E7AACAF7B6" />
+            <ComponentRef Id="cmp5E0106B013889EA9C6552E6F4830A4A9" />
+            <ComponentRef Id="cmp3DB924FAF150C81E8188B88B02EBAB6A" />
+            <ComponentRef Id="cmp3B05D846CAE9AF7F3FCC8CC52FA78E80" />
+            <ComponentRef Id="cmp0E59FD61BD8BAEB9E65B225C6E5561FA" />
+            <ComponentRef Id="cmpC6F692AFC5C3316767F7762331247678" />
+            <ComponentRef Id="cmpD6C819F6AFBC577962CCB9ADD0AC9194" />
+            <ComponentRef Id="cmpCAA590F91FB21C27F2335F451F8FB09B" />
+            <ComponentRef Id="cmpC86D8C9DDFE044AEE0D98479B6D1E848" />
+            <ComponentRef Id="cmp0122CE1519BEC26C35F1D0E608B8A980" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>

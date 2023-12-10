@@ -2,7 +2,7 @@
 
 ## Needed programs:
 
- * [WiX](http://wixtoolset.org/) version 3.5 or later.
+ * [WiX](http://wixtoolset.org/) version 3.11 or later.
  * [MSBuild](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-reference?view=vs-2019). MSBuild is part of .NET 2.0 or later SDK.
 
 ## Installer script:
@@ -41,7 +41,7 @@ There are two commonly used parameters:
 For example:
 
 ```
-msbuild.exe StageInstrument.wixproj /p:Platform=x86,ProductVersion=1.0.2
+msbuild.exe StageInstrument.wixproj /p:Platform=x86,Configuration=Debug,ProductVersion=1.0.2
 ```
 
 If the compile succeeds you have `StageInstrument-[platform]-Setup.msi` files in `Build\WiX\Release\` folder's subfolders. 

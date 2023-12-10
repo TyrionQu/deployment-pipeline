@@ -1,23 +1,5 @@
 ## Build Requirements
 
-### Visual Studio 2017
-
- * *Community*, *Professional* or *Enterprise* Edition
- * VC++ 2017 latest v141 tools
- * Visual C++ compilers and libraries for (ARM, ARM64)
- * Windows XP support for C++
- * Visual C++ MFC for (x86 and x64, ARM, ARM64)
- * Visual C++ ATL for (x86 and x64, ARM, ARM64)
- * Windows 10 SDK
-
-### Visual Studio 2019
-
- * *Community*, *Professional* or *Enterprise* Edition
- * MSVC v142 - VS 2019 C++ (x64/x86, ARM, ARM64) build tools (Latest)
- * C++ MFC for latest v142 build tools (x86 & x64, ARM, ARM64)
- * C++ ATL for latest v142 build tools (x86 & x64, ARM, ARM64)
- * Windows 10 SDK
-
 ### Visual Studio 2022
 
  * *Community*, *Professional* or *Enterprise* Edition
@@ -29,10 +11,16 @@
 ### Other utilities/programs
 
  * git
- * WiX v3
+ * WiX v3.11
+ * cmake
 
 ## How to Build
 
 ~~~
+BuildAll.cmd [x86|x64] [Debug|Release] [delete|nop]
 ~~~
 
+### param indication
+ * x86|x64 indicates build platform
+ * Debug|Release indicates build configuration
+ * delete means delete depencies and main exe source folder, nop means do nothing

@@ -30,7 +30,6 @@
     <Compile Include="Fragments\OpencvDebug.wxs" Condition=" '$(Configuration)' == 'Debug' " />
 	<Compile Include="Fragments\Opencv.wxs" Condition=" '$(Configuration)' == 'Release' " />
 	-->
-	<Compile Include="Fragments\Opencv.wxs"/>
 	<Compile Include="Fragments\Features.wxs" />
 	<Compile Include="Fragments\Updater.wxs" />
     <Compile Include="Fragments\WixUI_StageInstrument.wxs" />

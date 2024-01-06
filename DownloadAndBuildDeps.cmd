@@ -36,6 +36,7 @@ echo platform：%platform%
 echo configuration：%configuration%
 echo deleteFolder：%deleteFolder%
 
+
 pushd "%~dp0"
 rem download dependencies using git
 git clone https://github.com/TyrionQu/dependencies.git
@@ -44,17 +45,6 @@ git pull
 rem download submodules in dependencies
 git submodule update --init --recursive 
 
-
-echo cpython building start!!
-rem build cpython
-pushd cpython
-rem python*.dll is created in PCbuild/amd64/
-call PCbuild\build.bat -p %platform% -c Release
-if %errorlevel% neq 0 goto :eof 
-popd
-echo cpython building end!!
-
-
 echo opencv building start!!
 rem build opencv
 pushd opencv
@@ -62,8 +52,8 @@ mkdir build
 pushd build
 rem cmake -G "Visual Studio 17 2022" -A %platform% -DCMAKE_BUILD_TYPE=%configuration% -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF ..
 rem msbuild /m ALL_BUILD.vcxproj /p:Platform=%platform% /p:Configuration=%configuration%
-cmake -G "Visual Studio 17 2022" -A %platform% -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF ..
-msbuild /m ALL_BUILD.vcxproj /p:Platform=%platform% /p:Configuration=Release
+cmake -G "Visual Studio 17 2022" -A %platform% -DCMAKE_BUILD_TYPE=%configuration% -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DBUILD_opencv_world=ON ..
+msbuild /m ALL_BUILD.vcxproj /p:Platform=%platform% /p:Configuration=%configuration%
 popd
 popd
 echo opencv building end!!

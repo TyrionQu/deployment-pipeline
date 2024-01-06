@@ -29,11 +29,10 @@
 	<?define ProgramFilesFolder = "ProgramFiles64Folder" ?>
 	<?define MergeBuildDir = "..\..\StageInstrument\x64\$(var.Configuration)\" ?>
 	<?define UpdaterBuildDir = "..\..\dependencies\wingup\bin64\" ?>
-	<?define OpencvBuildDir = "..\..\dependencies\opencv\build\bin\Release\" ?>
+	<?define OpencvBuildDir = "..\..\dependencies\opencv\build\bin\$(var.Configuration)\" ?>
 
 	<?define StartMenuShortcutsGuid = "d2895226-4499-4db4-acdc-79ad3df3aad6" ?>
 	<?define DesktopShortcutGuid = "6cca4256-0db4-4fa2-8559-769742604334" ?>
-	<?define OpencvSetEnvGuid = "b5844209-7e90-407a-9bf2-0e78e3c63ed8" ?>
 
 	<?else ?>
 	<!-- if "x86" platform -->
@@ -44,11 +43,10 @@
 	<?define ProgramFilesFolder = "ProgramFilesFolder" ?>
 	<?define MergeBuildDir = "..\..\StageInstrumen\StageInstrument\$(var.Configuration)\" ?>
 	<?define UpdaterBuildDir = "..\..\dependencies\wingup\bin\" ?>
-	<?define OpencvBuildDir = "..\..\dependencies\opencv\build\bin\Release\" ?>
+	<?define OpencvBuildDir = "..\..\dependencies\opencv\build\bin\$(var.Configuration)\" ?>
 
 	<?define StartMenuShortcutsGuid = "c7bd9f73-64d3-4289-8cf7-73ab3c673ddb" ?>
 	<?define DesktopShortcutGuid = "4c353e18-097e-4d7f-9cb3-b542bdefc2b0" ?>
-	<?define OpencvSetEnvGuid = "dd3f764e-c8a2-42e1-a930-13b57e1583c0" ?>
 
 	<?endif ?>
 </Include>

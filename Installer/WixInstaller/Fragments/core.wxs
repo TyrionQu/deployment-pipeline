@@ -9,16 +9,17 @@
 				  Source="$(var.MergeBuildDir)\StageInstrument.exe"
 				  Vital="yes" />
 			</Component>
-			<!-- set opencv env -->
-			<Component Id="SetOpencvEnvironmentVariable" Guid="$(var.OpencvSetEnvGuid)" Win64="$(var.Win64)">
-				<CreateFolder />
-				<Environment Id="OpencvEnvironmentVariable"
-							 Action="set"
-							 Name="PATH"
-							 Part="last"
-							 Permanent="no"
-							 System="yes"
-							 Value="[OPENCVDIR]"/>
+			<Component Id="OpencvLib" Guid="*" Win64="$(var.Win64)">
+				<?if $(var.Configuration) = Debug ?>
+				<File Id="OpencvDLL" Name="opencv_world481d.dll" 
+					  Source="$(var.OpencvBuildDir)\opencv_world481d.dll" 
+					  Vital="yes" />
+				<?else?>
+				<File Id="OpencvDLL"
+				  Name="opencv_world481.dll"
+				  Source="$(var.OpencvBuildDir)\opencv_world481.dll"
+				  Vital="yes" />
+				<?endif?>
 			</Component>
 		</DirectoryRef>
 

@@ -49,7 +49,7 @@ set "start_time=!TIME!"
 
 call DownloadAndBuildDeps.cmd %platform% %configuration% %deleteFolder% || goto :eof
 call DownloadAndBuildExe.cmd %platform% %configuration% %deleteFolder% || goto :eof
-call BuildInstaller.cmd %platform% %configuration% %deleteFolder% %version%
+call BuildInstaller.cmd %platform% %configuration% %version%
 
 rem record stop time
 set "end_time=!TIME!"

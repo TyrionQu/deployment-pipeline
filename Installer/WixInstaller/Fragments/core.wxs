@@ -11,12 +11,12 @@
 			</Component>
 			<Component Id="OpencvLib" Guid="*" Win64="$(var.Win64)">
 				<?if $(var.Configuration) = Debug ?>
-				<File Id="OpencvDLL" Name="opencv_world480d.dll" 
+				<File Id="OpencvDLL" Name="opencv_world481d.dll" 
 					  Source="$(var.OpencvBuildDir)\opencv_world481d.dll" 
 					  Vital="yes" />
 				<?else?>
 				<File Id="OpencvDLL"
-				  Name="opencv_world480.dll"
+				  Name="opencv_world481.dll"
 				  Source="$(var.OpencvBuildDir)\opencv_world481.dll"
 				  Vital="yes" />
 				<?endif?>

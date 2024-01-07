@@ -4,6 +4,11 @@ call "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build
 
 set "default_platform=x64"
 set "default_configuration=Debug"
+set "default_delete=nop"
+set "default_version=1.0.0"
+
+
+
 
 rem check platform validation
 set "valid_platforms=x86 x64"
@@ -23,12 +28,26 @@ if not "%valid_configurations%" equ "%valid_configurations:*%configuration%=%" (
     set "configuration=%default_configuration%"
 )
 
+rem check delete folder validation
+set "deleteFolder=%3"
+if not defined deleteFolder set "deleteFolder=%default_delete%"
+if /i "%deleteFolder%"=="delete" (
+	echo Deleting folders...
+	rmdir /s /q Build
+	rmdir /s /q BuildTmp
+	echo Folders deleted successfully.
+)
+
+set "version=%4"
+if not defined version set "version=%default_version%"
+
 echo platform：%platform%
 echo configuration：%configuration%
+echo version：%version%
 
 pushd "%~dp0"
 pushd Installer\WixInstaller
-rem msbuild /m StageInstrument.wixproj /p:Platform=%platform% /p:Configuration=%configuration% /p:ProductVersion=1.0.0
-msbuild /m StageInstrument.wixproj /p:Platform=%platform% /p:Configuration=%configuration%
+msbuild.exe StageInstrument.wixproj /p:Platform=%platform% /p:Configuration=%configuration% /p:ProductVersion=%version%
+rem msbuild.exe /m StageInstrument.wixproj /p:Platform=%platform% /p:Configuration=%configuration%
 popd
 popd

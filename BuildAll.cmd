@@ -4,6 +4,7 @@ setlocal enabledelayedexpansion
 rem set default config
 set "default_platform=x64"
 set "default_configuration=Debug"
+set "default_version=1.0.0"
 set "default_delete=nop"
 
 rem check platform validation
@@ -24,8 +25,12 @@ if not "%valid_configurations%" equ "%valid_configurations:*%configuration%=%" (
     set "configuration=%default_configuration%"
 )
 
+rem check version
+set "version=%3"
+if not defined version set "version=%default_version%"
+
 rem check delete folder validation
-set "deleteFolder=%3"
+set "deleteFolder=%4"
 if not defined deleteFolder set "deleteFolder=%default_delete%"
 if /i "%deleteFolder%"=="delete" (
 	echo Deleting folders...
@@ -36,6 +41,7 @@ if /i "%deleteFolder%"=="delete" (
 
 echo platform：%platform%
 echo configuration：%configuration%
+echo version：%version%
 echo deleteFolder：%deleteFolder%
 
 rem record start time
@@ -43,7 +49,7 @@ set "start_time=!TIME!"
 
 call DownloadAndBuildDeps.cmd %platform% %configuration% %deleteFolder% || goto :eof
 call DownloadAndBuildExe.cmd %platform% %configuration% %deleteFolder% || goto :eof
-call BuildInstaller.cmd %platform% %configuration%
+call BuildInstaller.cmd %platform% %configuration% %deleteFolder% %version%
 
 rem record stop time
 set "end_time=!TIME!"

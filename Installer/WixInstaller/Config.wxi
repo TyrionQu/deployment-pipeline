@@ -1,25 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Include>
-	<?ifndef Platform ?>
-	<!-- if platform NOT defined -->
-	<?define Platform = "x64" ?>
-	<?endif ?>
-	<?ifndef Configuration ?>
-	<!-- if Configuration NOT defined -->
-	<?define Configuration = "Debug" ?>
-	<?endif ?>
 	<?define Manufacturer = "Jingdian Optoelectronic Technology Corporation" ?>
 	<?define ProductName = "StageInstrument" ?>
-	<?ifndef ProductVersion ?>
-	<!-- if product version NOT defined -->
-	<?define ProductVersion = "0.0.1" ?>
-	<?endif ?>
 
 	<?define PackageDescription = "StageInstrument Installer" ?>
 	<?define PackageKeywords = "Installer" ?>
 	<?define PackageComments = "StageInstrument" ?>
 	<?define DependenciesDir = "..\..\dependencies\" ?>
-
+	
 	<?if $(var.Platform) = "x64" ?>
 	<!-- if "x64" platform -->
 	<?define Win64 = "yes" ?>

@@ -17,10 +17,12 @@
 ## How to Build
 
 ~~~
-BuildAll.cmd [x86|x64] [Debug|Release] [delete|nop]
+BuildAll.cmd [x86|x64] [Debug|Release] [version] [delete|nop] [yes|no]
 ~~~
 
 ### param indication
  * x86|x64 indicates build platform
  * Debug|Release indicates build configuration
+ * version indicates build version, the format is like 1.0.0
  * delete means delete depencies and main exe source folder, nop means do nothing
+ * yes|no is a forced upgrade required

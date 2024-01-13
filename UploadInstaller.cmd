@@ -5,7 +5,7 @@ rem set default config
 set "default_platform=x64"
 set "default_configuration=Debug"
 set "default_version=1.0.0"
-set "default_forcedupdate=no"
+set "default_forceupdate=no"
 
 rem check platform validation
 set "valid_platforms=x86 x64"
@@ -29,23 +29,45 @@ rem check version
 set "version=%3"
 if not defined version set "version=%default_version%"
 
-rem check forcedupdate validation
-set "valid_forcedupdate=yes no"
-set "forcedupdate=%4"
-if not defined forcedupdate set "forcedupdate=%default_forcedupdate%"
-if "%valid_forcedupdate%" equ "!valid_forcedupdate:*%forcedupdate%=!" (
-    echo invalid forcedupdate:%forcedupdate%, use default:%default_forcedupdate%
-    set "forcedupdate=%default_forcedupdate%"
+rem check forceupdate validation
+set "valid_forceupdate=yes no"
+set "forceupdate=%4"
+if not defined forceupdate set "forceupdate=%default_forceupdate%"
+if "%valid_forceupdate%" equ "!valid_forceupdate:*%forceupdate%=!" (
+    echo invalid forceupdate:%forceupdate%, use default:%default_forceupdate%
+    set "forceupdate=%default_forceupdate%"
 )
 
 echo platform:%platform%
 echo configuration:%configuration%
 echo version:%version%
-echo forcedupdate:%forcedupdate%
+echo forceupdate:%forceupdate%
 
-echo upload the Setup file
+set domain=www.riskfree.com.cn
+
+echo Start to upload the Setup file
 icacls stage_instrument_rsa /inheritance:r /grant:r "%username%:R"
-scp -i stage_instrument_rsa Build\WiX\%configuration%\%platform%\StageInstrument-%version%-%platform%-Setup.msi root@121.40.148.40:/
+scp -i stage_instrument_rsa Build\WiX\%configuration%\%platform%\StageInstrument-%version%-%platform%-Setup.msi root@%domain%:/ && (
+    echo SCP operation successful
+) || (
+    echo SCP operation failed
+    goto :eof
+)
+
+rem ping the domain
+for /f "tokens=3" %%a in ('ping -n 1 %domain% ^| findstr "Pinging"') do (
+    set input=%%a
+)
+
+rem extra ip
+set ip=!input:~1,-1!
+
+if defined ip (
+    echo Server IP address is !ip!
+) else (
+    echo Unable to retrieve IP address.
+	goto :eof
+)
 
 echo update the version info in server
-curl -X POST -F "Version=%version%" -F "ForcedUpdate=%forcedupdate%" http://121.40.148.40:8080/update
+curl -X POST -F "Version=%version%" -F "ForceUpdate=%forceupdate%" http://!ip!:8080/update

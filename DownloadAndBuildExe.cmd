@@ -11,7 +11,7 @@ set "valid_platforms=x86 x64"
 set "platform=%1"
 if not defined platform set "platform=%default_platform%"
 if not "%valid_platforms%" equ "%valid_platforms:*%platform%=%" (
-    echo invalid platform：%platform%，use default：%default_platform%
+    echo invalid platform:%platform%, use default:%default_platform%
     set "platform=%default_platform%"
 )
 
@@ -20,7 +20,7 @@ set "valid_configurations=Debug Release"
 set "configuration=%2"
 if not defined configuration set "configuration=%default_configuration%"
 if not "%valid_configurations%" equ "%valid_configurations:*%configuration%=%" (
-    echo invalid platform：%configuration%，use default：%default_configuration%
+    echo invalid platform:%configuration%, use default:%default_configuration%
     set "configuration=%default_configuration%"
 )
 
@@ -33,9 +33,9 @@ if /i "%deleteFolder%"=="delete" (
 	echo Folders deleted successfully.
 )
 
-echo platform：%platform%
-echo configuration：%configuration%
-echo deleteFolder：%deleteFolder%
+echo platform:%platform%
+echo configuration:%configuration%
+echo deleteFolder:%deleteFolder%
 
 pushd "%~dp0"
 rem download StageInstrument using git

@@ -13,7 +13,7 @@ set "valid_platforms=x86 x64"
 set "platform=%1"
 if not defined platform set "platform=%default_platform%"
 if not "%valid_platforms%" equ "%valid_platforms:*%platform%=%" (
-    echo invalid platform：%platform%，use default：%default_platform%
+    echo invalid platform:%platform%, use default:%default_platform%
     set "platform=%default_platform%"
 )
 
@@ -22,7 +22,7 @@ set "valid_configurations=Debug Release"
 set "configuration=%2"
 if not defined configuration set "configuration=%default_configuration%"
 if not "%valid_configurations%" equ "%valid_configurations:*%configuration%=%" (
-    echo invalid platform：%configuration%，use default：%default_configuration%
+    echo invalid platform:%configuration%, use default:%default_configuration%
     set "configuration=%default_configuration%"
 )
 
@@ -59,6 +59,7 @@ rem record start time
 set "start_time=!TIME!"
 
 call DownloadAndBuildDeps.cmd %platform% %configuration% %deleteFolder% || goto :eof
+call UpdateVersionInGup.cmd %version% || goto :eof
 call DownloadAndBuildExe.cmd %platform% %configuration% %deleteFolder% || goto :eof
 call BuildInstaller.cmd %platform% %configuration% %version% || goto :eof
 call UploadInstaller.cmd %platform% %configuration% %version% %forcedupdate%
